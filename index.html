@@ -5,6 +5,7 @@
 		<title>Lokaverkefni</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -15,19 +16,28 @@
 			<nav>
 				<ul>
 					<li>
-						<a href="#">TIC-TAC-TOE</a>
+						<a href="#" data-section="#tic-tac-toe">TIC-TAC-TOE</a>
 					</li>
 					<li>
-						<a href="#">PONG</a>
+						<a href="#" data-section="breakout">BREAKOUT</a>
 					</li>
 					<li>
-						<a href="#">PACMAN</a>
+						<a href="#" data-section="pacman">PACMAN</a>
 					</li>
 				</ul>
 			</nav>
-			<a href="mylla.html">Mylla</a>
+			<section id="tic-tac-toe">
+				<img src="http://cdn.meme.am/images/300x/6541210.jpg">
+			</section>
+			<section id="breakout">
+				<img src="http://m.memegen.com/ie2327.jpg">
+			</section>
+			<section id="pacman">
+				<img src="http://memecrunch.com/image/4fb3fbfd1861336f9d002283.png?w=399">
+			</section>
 		</main>
 		<footer>
 		</footer>
+		<script src="loadsection.js"></script>
 	</body>
 </html>
