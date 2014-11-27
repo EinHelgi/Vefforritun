@@ -17,10 +17,8 @@ try {
 	// Create (connect to) SQLite database in file
 	$file_db = new SQLite3('tictactoe.db');
 	// Set errormode to exceptions
-	//$file_db->setAttribute(PDO::ATTR_ERRMODE, 
-	//                        PDO::ERRMODE_EXCEPTION);
 
-	//$table = 'hardNoStart';
+	$table = 'hardNoStart';
 	$query = $file_db->prepare("SELECT result, win FROM hardStart WHERE one = :one AND two = :two AND three = :three AND four = :four AND five = :five AND six = :six AND seven = :seven AND eight =:eight AND nine = :nine");
 	
 	$query->bindValue('one',$board[0]);
@@ -32,18 +30,12 @@ try {
 	$query->bindValue('seven',$board[6]);
 	$query->bindValue('eight',$board[7]);
 	$query->bindValue('nine',$board[8]);
-
+	//$query->bindValue('table',$table);
 
 	$result = $query->execute();
 
 	$data = $result->fetchArray();
 	echo json_encode($data);
-	/*if($data['win']===false) {
-		var_dump($data['win']);
-	}
-	else {
-		var_dump($data['result']);
-	}*/
 
 	$file_db = null;
 }

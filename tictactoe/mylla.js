@@ -14,6 +14,7 @@ var pos = [ [0,0],[150,0],[300,0],
 var board = [0,0,0,0,0,0,0,0,0];
 var tileSize = 150;
 var yourMove = false;
+var alienStart = false;
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -47,7 +48,7 @@ function play(evt) {
 }
 
 function getFromPhp() {
-    $.get("mylla.php",{'board[]':board},function(data) {test(data);}, 'json');
+    $.get("mylla.php", {'board[]':board}, function(data) {test(data);}, 'json');
 }
 
 function test(data) {
