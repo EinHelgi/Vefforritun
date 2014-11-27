@@ -11,10 +11,10 @@ var g_mouseX = 0,
 var pos = [ [0,0],[150,0],[300,0],
             [0,150],[150,150],[300,150],
             [0,300],[150,300],[300,300]];
-var board = [0,0,0,0,0,0,0,0,0];
+var board = [0,0,0,0,0,0,0,0,0, false];
 var tileSize = 150;
-var yourMove = false;
-var alienStart = false;
+var yourMove = true;
+var alienMove = false
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -28,6 +28,7 @@ g_canvas.addEventListener("mousedown", handleMouse);
 playButton.addEventListener("click", play);
 
 function handleMouse(evt) {
+    console.log(board + " mouse");
     var rect = g_canvas.getBoundingClientRect();
 
     g_mouseX = evt.clientX - rect.left;
@@ -41,25 +42,29 @@ function handleMouse(evt) {
 }
 
 function play(evt) {
-    board = [0,0,0,0,0,0,0,0,0];
+    board = [0,0,0,0,0,0,0,0,0, alienMove];
     util.clearCanvas(g_ctx);
-    drawBoard(g_ctx);
-    getFromPhp();
+    drawAll(g_ctx);
+    if(board[9]===true)getFromPhp();
 }
 
 function getFromPhp() {
-    $.get("mylla.php", {'board[]':board}, function(data) {test(data);}, 'json');
+    $.get("mylla.php", {'board[]':board}, function(data) {if(data) test(data);}, 'json');
 }
 
 function test(data) {
+    console.log(data);
     if(data[1]==="false" || data[1]==="tie" || data[1]==="alien") {
         board[data[0]-1] = 2;
 
         drawAll(g_ctx);
         if(data[1]==="false") yourMove = true;
     }
-    if(data[1]==="tie") alert("It is a tie!");
-    if(data[1]==="alien") alert("I win!");
+    if(data[1]==="tie" || data[1]==="alien") {
+        alert("okey");
+        yourMove = board[9];
+        alienMove = !alienMove;
+    }
 
 }
 // ==========
@@ -131,6 +136,7 @@ function drawBoard(ctx) {
     var oldstyle = ctx.strokeStyle;
     ctx.strokeStyle = 'black';
     ctx.lineWidth=5;
+    ctx.beginPath();
     ctx.rect(0,0,tileSize,tileSize);
     ctx.rect(tileSize,0,tileSize,tileSize);
     ctx.rect(tileSize*2,0,tileSize,tileSize);
@@ -166,7 +172,5 @@ function drawO(ctx, x, y) {
     ctx.stroke();
     ctx.strokeStyle = oldstyle;
 }
-
-
 
 drawBoard(g_ctx);

@@ -18,9 +18,14 @@ try {
 	$file_db = new SQLite3('tictactoe.db');
 	// Set errormode to exceptions
 
-	$table = 'hardNoStart';
-	$query = $file_db->prepare("SELECT result, win FROM hardStart WHERE one = :one AND two = :two AND three = :three AND four = :four AND five = :five AND six = :six AND seven = :seven AND eight =:eight AND nine = :nine");
-	
+	$table = 'hardStart';
+
+	if($board[9]==='true') {
+		$query = $file_db->prepare("SELECT result, win FROM hardStart WHERE one = :one AND two = :two AND three = :three AND four = :four AND five = :five AND six = :six AND seven = :seven AND eight =:eight AND nine = :nine");
+	}
+	else {
+		$query = $file_db->prepare("SELECT result, win FROM hardNoStart WHERE one = :one AND two = :two AND three = :three AND four = :four AND five = :five AND six = :six AND seven = :seven AND eight =:eight AND nine = :nine");		
+	}
 	$query->bindValue('one',$board[0]);
 	$query->bindValue('two',$board[1]);
 	$query->bindValue('three',$board[2]);
