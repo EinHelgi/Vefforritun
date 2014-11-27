@@ -37,11 +37,16 @@ function handleMouse(evt) {
 
     if(yourMove) {
         checkBoard();
-        $(".currentPlayer").text('Alien is thinking.....');
-        drawAll(g_ctx);
-        getFromPhp();
+        if(!yourMove) {
+            $(".currentPlayer").text('Alien is thinking.....');
+            drawAll(g_ctx);
+            getFromPhp();
+        }
     }
 }
+// ==========
+// GAME STUFF
+// ==========
 
 function play() {
     board = [0,0,0,0,0,0,0,0,0, alienMove];
@@ -55,7 +60,6 @@ function getFromPhp() {
 }
 
 function test(data) {
-    console.log(data);
     if(data[1]==="false" || data[1]==="tie" || data[1]==="alien") {
         board[data[0]-1] = 2;
         $(".currentPlayer").text('Your turn');
@@ -63,24 +67,23 @@ function test(data) {
         if(data[1]==="false") yourMove = true;
     }
     if(data[1]==="tie" || data[1]==="alien") {
-        $(".currentPlayer").text('Game over!');
         yourMove = board[9];
         alienMove = !alienMove;
         if(data[1]==="tie") {
             scoreBoard[2]++;
             scoreBoard[4]++;
+            $(".currentPlayer").text('You tied!');
         }
         if(data[1]==="alien") {
             scoreBoard[3]++;
             scoreBoard[4]--;
+            $(".currentPlayer").text('The Alien won!');
         }
         updateScore();
     }
 
 }
-// ==========
-// GAME STUFF
-// ==========
+
 function updateScore() {
     $(".player").text(scoreBoard[0]);
     $(".win").text(scoreBoard[1]);
