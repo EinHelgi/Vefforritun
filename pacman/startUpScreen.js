@@ -35,7 +35,7 @@ startUpScreen.prototype.blue = 222;
 startUpScreen.prototype.colorfadeinout = 'rgb(222,222,222)';
 startUpScreen.prototype.fadedirection = false;
 
-startUpScreen.prototype.introSound = new Audio("sounds/pacman_beginning.wav");
+startUpScreen.prototype.introSound = new Audio("pacman/sounds/pacman_beginning.wav");
 startUpScreen.prototype.soundplayed = false;
 
 startUpScreen.prototype.update = function(du) {

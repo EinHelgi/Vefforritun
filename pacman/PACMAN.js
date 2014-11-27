@@ -118,10 +118,10 @@ var KEY_AUDIO = keyCode('Z');
 var g_audioOn = true;
 
 //load audio
-var g_chompAudio = new Audio('sounds/pacman_chomp.wav'),
-    g_sirenAudio = new Audio('sounds/pacman_siren.wav'),
-    g_pacmandeathAudio = new Audio('sounds/pacman_death.wav'),
-    g_eatGhostsAudio = new Audio('sounds/pacman_eatghost.wav');
+var g_chompAudio = new Audio('pacman/sounds/pacman_chomp.wav'),
+    g_sirenAudio = new Audio('pacman/sounds/pacman_siren.wav'),
+    g_pacmandeathAudio = new Audio('pacman/sounds/pacman_death.wav'),
+    g_eatGhostsAudio = new Audio('pacman/sounds/pacman_eatghost.wav');
 
 // GAME-SPECIFIC DIAGNOSTICS
 
@@ -187,25 +187,25 @@ function requestPreloads() {
 
     var requiredImages = {
         
-        levelwalls_blue : "images/walls_blue.png",
-        levelwalls_white : "images/walls_white.png",
+        levelwalls_blue : "pacman/images/walls_blue.png",
+        levelwalls_white : "pacman/images/walls_white.png",
 
-        b_continue : "images/continue.png",
-        b_newgame : "images/newgame.png",
-        b_quit : "images/quit.png",
+        b_continue : "pacman/images/continue.png",
+        b_newgame : "pacman/images/newgame.png",
+        b_quit : "pacman/images/quit.png",
 
-        pacmanlogo : "images/pacmanlogo.png",
+        pacmanlogo : "pacman/images/pacmanlogo.png",
 
-        therealone: "images/pacmanRight.png",
-        therealoneLeft: "images/pacmanLeft.png",
-        deadPacman : "images/deadPacMan1.png",
-        inky: "images/inky.png",
-        blinky: "images/blinky.png",
-        pinky: "images/pinky.png",
-        clyde: "images/clyde.png",
-        scared: "images/scaredGhosts.png",
-        scaredEnd : "images/scaredGhostsEnd.png",
-        candy : "images/candy.png"
+        therealone: "pacman/images/pacmanRight.png",
+        therealoneLeft: "pacman/images/pacmanLeft.png",
+        deadPacman : "pacman/images/deadPacMan1.png",
+        inky: "pacman/images/inky.png",
+        blinky: "pacman/images/blinky.png",
+        pinky: "pacman/images/pinky.png",
+        clyde: "pacman/images/clyde.png",
+        scared: "pacman/images/scaredGhosts.png",
+        scaredEnd : "pacman/images/scaredGhostsEnd.png",
+        candy : "pacman/images/candy.png"
     };
 
     imagesPreload(requiredImages, g_images, preloadDone);
