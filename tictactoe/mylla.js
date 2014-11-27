@@ -36,6 +36,7 @@ function handleMouse(evt) {
 
     if(yourMove) {
         checkBoard();
+        $(".currentPlayer").text('Alien is thinking.....');
         drawAll(g_ctx);
         getFromPhp();
     }
@@ -56,12 +57,12 @@ function test(data) {
     console.log(data);
     if(data[1]==="false" || data[1]==="tie" || data[1]==="alien") {
         board[data[0]-1] = 2;
-
+        $(".currentPlayer").text('Your turn');
         drawAll(g_ctx);
         if(data[1]==="false") yourMove = true;
     }
     if(data[1]==="tie" || data[1]==="alien") {
-        alert("okey");
+        $(".currentPlayer").text('Game over!');
         yourMove = board[9];
         alienMove = !alienMove;
     }
