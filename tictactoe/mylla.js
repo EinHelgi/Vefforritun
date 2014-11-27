@@ -15,7 +15,7 @@ var board = [0,0,0,0,0,0,0,0,0, false];
 var tileSize = 150;
 var yourMove = true;
 var alienMove = false
-var scoreBoard = ['current', 0, 0, 0, 0];
+var scoreBoard = ['current', 0];
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -29,7 +29,6 @@ g_canvas.addEventListener("mousedown", handleMouse);
 playButton.addEventListener("click", play);
 
 function handleMouse(evt) {
-    console.log(board + " mouse");
     var rect = g_canvas.getBoundingClientRect();
 
     g_mouseX = evt.clientX - rect.left;
@@ -70,13 +69,11 @@ function test(data) {
         yourMove = board[9];
         alienMove = !alienMove;
         if(data[1]==="tie") {
-            scoreBoard[2]++;
-            scoreBoard[4]++;
+            scoreBoard[1]++;
             $(".currentPlayer").text('You tied!');
         }
         if(data[1]==="alien") {
-            scoreBoard[3]++;
-            scoreBoard[4]--;
+            scoreBoard[1]--;
             $(".currentPlayer").text('The Alien won!');
         }
         updateScore();
@@ -86,10 +83,7 @@ function test(data) {
 
 function updateScore() {
     $(".player").text(scoreBoard[0]);
-    $(".win").text(scoreBoard[1]);
-    $(".tie").text(scoreBoard[2]);
-    $(".loss").text(scoreBoard[3]);
-    $(".totScore").text(scoreBoard[4]);
+    $(".totScore").text(scoreBoard[1]);
 }
 
 function checkBoard() {
@@ -196,5 +190,24 @@ function drawO(ctx, x, y) {
     ctx.strokeStyle = oldstyle;
 }
 
+function updateHighscore() {
+    $.get("getMyllaHighscore.php", function(data) {addToHtml(data);}, 'json');
+}
+
+function addToHtml(data) {
+    $('.highplayer').empty();
+    $('.highScore').empty();
+    for (var i=0;i<20;++i) {
+        $('.highplayer').append("<li>"+data[i]+"</li>");
+        i++
+        $('.highScore').append("<li>"+data[i]+"</li>");
+    }
+}
+
+function insertToHighscore(data){
+    console.log(data);
+    $.get("insertMyllaHighscore.php", {'data[]':data}, function(data) {alert(data);});
+}
 drawBoard(g_ctx);
 updateScore();
+updateHighscore();

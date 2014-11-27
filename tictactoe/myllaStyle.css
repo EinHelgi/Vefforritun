@@ -31,6 +31,9 @@ body{
 	text-align: center; 
 	padding-bottom: 1em;
 }
+ul li {
+	list-style: none;
+}
 
 form {text-align: center;}
 
