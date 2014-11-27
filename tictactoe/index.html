@@ -11,14 +11,43 @@
             <canvas id="myCanvas" class= "mylla" height="450" width="450">
             Sorry, but your browser does not support the HTML5 canvas tag
             </canvas>
-            <label class="head">Player</label>
-            <label class="head">Win</label>
-            <label class="head">Tie</label>
-            <label class="head">Losses</label>
-        </div>
-        <div>
             <button id="playButton" type="button">Play again</button>
             <label class="currentPlayer">Your turn</label>
+        </div>
+        <div class="score">
+            <div class="scoreboard">
+                <label>Player</label>
+                <ul class="player"></ul>
+            </div>
+            <div class="scoreboard">
+                <label>Win</label>
+                <ul class="win"></ul>
+            </div>
+            <div class="scoreboard">
+                <label>Tie</label>
+                <ul class="tie"></ul>
+            </div>
+            <div class="scoreboard">
+                <label>Loss</label>
+                <ul class="loss"></ul>
+            </div>
+            <div class="scoreboard">
+                <label>Score</label>
+                <ul class="totScore"></ul>
+            </div>
+            <h3>HIGHSCORE</h3>
+            <div class="highboard">
+                <label>Player</label>
+                <ul class="highplayer"></ul>
+            </div>
+            <div class="highboard">
+                <label>Score</label>
+                <ul class="highScore"></ul>
+            </div>
+            <form>
+                Player name: <input type="text" name="pname"><br>
+            </form>
+            <input type="submit" value="Submit">
         </div>
         <div id="output"></div>
         <script src="mylla.js"></script>

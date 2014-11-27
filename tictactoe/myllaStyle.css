@@ -1,10 +1,36 @@
 * { margin: 0; padding: 0; }
-div{
-	width: 100%;
+body{
+	max-width: 900px;
+	margin: auto;
+	margin-top: 2em;
 }
 .mylla {
 	border: 1px solid black;
 }
-.head {
-	width : 10%;
+.game {
+	box-sizing: border-box;
+	width: 450px;
+	float: left;
+}
+.sore {
+	box-sizing: border-box;
+	float: left;
+	max-width: 445px;
+	margin-right: 5px;
+}
+.score h3 {
+	text-align: center;
+}
+.scoreboard {
+	box-sizing: border-box;
+	float: left;
+	width: 10%;
+	padding-left: 1em;
+}
+
+.highboard {
+	box-sizing: border-box;
+	float: left;
+	width: 24%;
+	padding-left: 1em;
 }

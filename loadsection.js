@@ -6,7 +6,7 @@ $(document).ready(function()
 	{
 	    var id = $(this).data("section");
 
-	    if(!pacmanload || id === "#tic-tac-toe" || id === "#breakout") 
+	    if(!pacmanload || id === "#tic-tac-toe"  || id === "#breakout") 
 	    {
 		    $("section:visible").fadeOut(function() 
 		    {

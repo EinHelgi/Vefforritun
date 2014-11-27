@@ -15,6 +15,7 @@ var board = [0,0,0,0,0,0,0,0,0, false];
 var tileSize = 150;
 var yourMove = true;
 var alienMove = false
+var scoreBoard = ['player', 0, 0, 0, 0];
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -42,7 +43,7 @@ function handleMouse(evt) {
     }
 }
 
-function play(evt) {
+function play() {
     board = [0,0,0,0,0,0,0,0,0, alienMove];
     util.clearCanvas(g_ctx);
     drawAll(g_ctx);
@@ -65,12 +66,29 @@ function test(data) {
         $(".currentPlayer").text('Game over!');
         yourMove = board[9];
         alienMove = !alienMove;
+        if(data[1]==="tie") {
+            scoreBoard[2]++;
+            scoreBoard[4]++;
+        }
+        if(data[1]==="alien") {
+            scoreBoard[3]++;
+            scoreBoard[4]--;
+        }
+        updateScore();
     }
 
 }
 // ==========
 // GAME STUFF
 // ==========
+function updateScore() {
+    $(".player").text(scoreBoard[0]);
+    $(".win").text(scoreBoard[1]);
+    $(".tie").text(scoreBoard[2]);
+    $(".loss").text(scoreBoard[3]);
+    $(".totScore").text(scoreBoard[4]);
+}
+
 function checkBoard() {
     var tilePos = [Math.floor(g_mouseX/tileSize), Math.floor(g_mouseY/tileSize)];
     if(tilePos[0]===0 && tilePos[1]===0 && board[0]===0) {
@@ -175,3 +193,4 @@ function drawO(ctx, x, y) {
 }
 
 drawBoard(g_ctx);
+updateScore();
