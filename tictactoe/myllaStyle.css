@@ -20,6 +20,7 @@ body{
 }
 .score h3 {
 	text-align: center;
+	margin-top: 2em;
 }
 .scoreboard {
 	box-sizing: border-box;
@@ -33,4 +34,8 @@ body{
 	float: left;
 	width: 24%;
 	padding-left: 1em;
+	height: 20em;
 }
+
+form {text-align: center;}
+.submitButton {text-align: center;}

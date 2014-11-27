@@ -15,7 +15,7 @@ var board = [0,0,0,0,0,0,0,0,0, false];
 var tileSize = 150;
 var yourMove = true;
 var alienMove = false
-var scoreBoard = ['player', 0, 0, 0, 0];
+var scoreBoard = ['current', 0, 0, 0, 0];
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -136,6 +136,7 @@ function checkBoard() {
         yourMove = false;
         return;
     }
+    $(".currentPlayer").text('Your turn');
 }
 
 
