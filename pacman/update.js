@@ -49,7 +49,7 @@ function update(dt) {
 
 // Togglable Pause Mode
 //
-var KEY_PAUSE = 'P'.charCodeAt(0);
+//var KEY_PAUSE = 'P'.charCodeAt(0);
 var KEY_STEP  = 'O'.charCodeAt(0);
 
 var KEY_ESC = 27;
@@ -57,10 +57,10 @@ var KEY_ESC = 27;
 var g_isUpdatePaused = false;
 
 function shouldSkipUpdate() {
-    if (eatKey(KEY_PAUSE)) {
+    /*if (eatKey(KEY_PAUSE)) {
         g_isUpdatePaused = !g_isUpdatePaused;
-    }
-    return g_isUpdatePaused && !eatKey(KEY_STEP);    
+    }*/
+    return g_isUpdatePaused //&& !eatKey(KEY_STEP);    
 }
 
 var g_isGamePaused = false;

@@ -35,6 +35,7 @@ try {
 	echo json_encode($data);
 
 	$file_db = null;
+
 }
 catch(Exception $e) {
 	// Print Exception message

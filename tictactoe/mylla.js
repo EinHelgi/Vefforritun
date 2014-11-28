@@ -3,9 +3,9 @@
 
 /* jshint browser: true, devel: true, globalstrict: true */
 
-var g_canvas = document.getElementById("myCanvas");
+var gb_canvas = document.getElementById("mylla");
 var playButton = document.getElementById("playButton");
-var g_ctx = g_canvas.getContext("2d");
+var gb_ctx = gb_canvas.getContext("2d");
 var g_mouseX = 0,
     g_mouseY = 0;
 var pos = [ [0,0],[150,0],[300,0],
@@ -25,11 +25,11 @@ var scoreBoard = ['current', 0];
 // ==============
 // MOUSE HANDLING
 // ==============
-g_canvas.addEventListener("mousedown", handleMouse);
+gb_canvas.addEventListener("mousedown", handleMouse);
 playButton.addEventListener("click", play);
 
 function handleMouse(evt) {
-    var rect = g_canvas.getBoundingClientRect();
+    var rect = gb_canvas.getBoundingClientRect();
 
     g_mouseX = evt.clientX - rect.left;
     g_mouseY = evt.clientY - rect.top;
@@ -38,7 +38,7 @@ function handleMouse(evt) {
         checkBoard();
         if(!yourMove) {
             $(".currentPlayer").text('Alien is thinking.....');
-            drawAll(g_ctx);
+            drawAll(gb_ctx);
             getFromPhp();
         }
     }
@@ -49,20 +49,20 @@ function handleMouse(evt) {
 
 function play() {
     board = [0,0,0,0,0,0,0,0,0, alienMove];
-    util.clearCanvas(g_ctx);
-    drawAll(g_ctx);
+    utilb.clearCanvas(gb_ctx);
+    drawAll(gb_ctx);
     if(board[9]===true)getFromPhp();
 }
 
 function getFromPhp() {
-    $.get("mylla.php", {'board[]':board}, function(data) {if(data) test(data);}, 'json');
+    $.get("tictactoe/mylla.php", {'board[]':board}, function(data) {if(data) test(data);}, 'json');
 }
 
 function test(data) {
     if(data[1]==="false" || data[1]==="tie" || data[1]==="alien") {
         board[data[0]-1] = 2;
         $(".currentPlayer").text('Your turn');
-        drawAll(g_ctx);
+        drawAll(gb_ctx);
         if(data[1]==="false") yourMove = true;
     }
     if(data[1]==="tie" || data[1]==="alien") {
@@ -141,7 +141,7 @@ function checkBoard() {
 // DRAW STUFF
 // ==========
 function drawAll(ctx) {
-    util.clearCanvas(ctx);
+    utilb.clearCanvas(ctx);
     drawBoard(ctx);
     for (var i=0; i<board.length; ++i) {
         if(board[i]===2) drawO(ctx, pos[i][0],pos[i][1]);
@@ -191,13 +191,20 @@ function drawO(ctx, x, y) {
 }
 
 function updateHighscore() {
-    $.get("getMyllaHighscore.php", function(data) {addToHtml(data);}, 'json');
+    var data = JSON.parse(localStorage.getItem('myllaHighscore'));
+    if(data===null) {
+        $.get("getMyllaHighscore.php", function(data) {addToHtml(data);}, 'json');
+    }
+    else {
+        addToHtml(data);
+    }
 }
 
 function addToHtml(data) {
+    localStorage.setItem('myllaHighscore', JSON.stringify(data));
     $('.highplayer').empty();
     $('.highScore').empty();
-    for (var i=0;i<20;++i) {
+    for (var i=0;i<data.length;++i) {
         $('.highplayer').append("<li>"+data[i]+"</li>");
         i++
         $('.highScore').append("<li>"+data[i]+"</li>");
@@ -205,9 +212,24 @@ function addToHtml(data) {
 }
 
 function insertToHighscore(data){
-    console.log(data);
-    $.get("insertMyllaHighscore.php", {'data[]':data}, function(data) {alert(data);});
+
+    var oldScore = JSON.parse(localStorage.getItem('myllaHighscore'));
+    var done = false;
+    var newScore = [];
+    for (var i=0; i<20; ++i) {
+        if(data[1]>=oldScore[i+1] && !done) {
+            newScore.push(data[0]);
+            newScore.push(data[1]);
+            done = true;
+        }
+        newScore.push(oldScore[i]);
+        ++i;
+        newScore.push(oldScore[i]);
+    }
+    newScore.splice(20);
+
+    localStorage.setItem('myllaHighscore', JSON.stringify(newScore));
 }
-drawBoard(g_ctx);
+drawBoard(gb_ctx);
 updateScore();
 updateHighscore();
