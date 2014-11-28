@@ -191,13 +191,20 @@ function drawO(ctx, x, y) {
 }
 
 function updateHighscore() {
-    $.get("getMyllaHighscore.php", function(data) {addToHtml(data);}, 'json');
+    var data = JSON.parse(localStorage.getItem('myllaHighscore'));
+    if(data===null) {
+        $.get("getMyllaHighscore.php", function(data) {addToHtml(data);}, 'json');
+    }
+    else {
+        addToHtml(data);
+    }
 }
 
 function addToHtml(data) {
+    localStorage.setItem('myllaHighscore', JSON.stringify(data));
     $('.highplayer').empty();
     $('.highScore').empty();
-    for (var i=0;i<20;++i) {
+    for (var i=0;i<data.length;++i) {
         $('.highplayer').append("<li>"+data[i]+"</li>");
         i++
         $('.highScore').append("<li>"+data[i]+"</li>");
@@ -205,9 +212,24 @@ function addToHtml(data) {
 }
 
 function insertToHighscore(data){
-    console.log(data);
-    $.get("insertMyllaHighscore.php", {'data[]':data}, function(data) {alert(data);});
+
+    var oldScore = JSON.parse(localStorage.getItem('myllaHighscore'));
+
+    var newScore = [];
+    for (var i=0; i<20; ++i) {
+        if(data[1]>=oldScore[i+1]) {
+            newScore.push(data[0]);
+            newScore.push(data[1]);
+        }
+        newScore.push(oldScore[i]);
+        ++i;
+        newScore.push(oldScore[i]);
+    }
+    newScore.splice(20);
+
+    localStorage.setItem('myllaHighscore', JSON.stringify(newScore));
 }
 drawBoard(g_ctx);
 updateScore();
 updateHighscore();
+
