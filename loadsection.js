@@ -2,13 +2,6 @@
 var g_pacmanload = false;
 var g_breakoutload = false;
 
-var scoreloaders = [];
-var mylla = {
-	cach : 'myllaHighscore',
-	php : "getMyllaHighscore.php"
-};
-
-
 var old_id;
 
 $(document).ready(function()
@@ -19,6 +12,22 @@ $(document).ready(function()
 
 	    startStopPacman(id, old_id);
 	    startStopBreakout(id, old_id);
+
+	    if(id==='#tic-tac-toe') {
+	    	console.log("mylla");
+	    	highscore = 0;
+	    	updateHighscore();
+	    }
+	    if(id==='#pacman') {
+	    	console.log("pacman");
+	    	highscore = 1;
+	    	updateHighscore();
+	    }
+	    if(id==='#breakout') {
+	    	console.log("breakout");
+	    	highscore = 2;
+	    	updateHighscore();
+	    }
 
 	    if(old_id !== id || old_id === undefined) 
 	    {

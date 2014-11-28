@@ -36,7 +36,22 @@
 			            <label class="currentPlayer">Your turn</label>
 					</section>
 					<section id="breakout">
-
+						<canvas id="breakoutCan" class= "level1" style="border: 1px solid black;" height="400" width="400">
+				        Sorry, but your browser does not support the HTML5 canvas tag
+				        </canvas>
+				        <audio src="breakout/hit1.wav" id="hit" preload="auto">Your browser does not support the audio tag</audio>
+				        <audio src="breakout/shot.wav" id="hitpaddle" preload="auto">Your browser does not support the audio tag</audio>
+				        <audio src="breakout/start.wav" id="start" preload="auto">Your browser does not support the audio tag</audio>
+				        <audio src="breakout/cartoonshot.wav" id="shoot" preload="auto">Your browser does not support the audio tag</audio>
+				        <h2>PLAYER CONTROLS:</h2>
+				        <div class="controls">
+				            <p>N: New Game</p>
+				            <p>P: Pause game</p>
+				            <p>Z: Sound off/on</p>
+				            <p>W: Shoot ball</p>
+				            <p>A: Move paddle left</p>
+				            <p>D: Move paddle right</p>
+				        </div>
 					</section>
 					<section id="pacman">
 					    <canvas id="myCanvas" class="canvas" width="448" height="576">
@@ -80,6 +95,8 @@
 		</footer>
 
 		<script src="loadsection.js"></script>
+		<script src="highscore.js"></script>
+		<script src="myllaScore.js"></script>
 
 		
 		<script src="pacman/globals.js"></script>
@@ -112,14 +129,23 @@
 
 	    <script src="pacman/imagesPreload.js"></script>
 	    <script src="pacman/main.js"></script>
-	    <script src="pacman/pacmanpreload.js"></script>
 
 	    <script src="tictactoe/mylla.js"></script>
-        <script src="tictactoe/myllaScore.js"></script>
+        <script src="myllaScore.js"></script>
         <script src="tictactoe/utilb.js"></script>
 
 	    <!--<script src="pacman/PACMAN.js"></script>-->
 
+	    <script src="breakout/utils.js"></script>
+        <script src="breakout/g_keys.js"></script>
+        <script src="breakout/g_paddle.js"></script>
+        <script src="breakout/g_wall.js"></script>
+        <script src="breakout/g_level.js"></script>
+        <script src="breakout/g_ball.js"></script>
+        <script src="breakout/g_main.js"></script>
+        <script src="breakout/update.js"></script>
+        <script src="breakout/render.js"></script>
+        <script src="breakout/BREAK.js"></script>
 
 
 	</body>
