@@ -1,5 +1,6 @@
 
 var g_pacmanload = false;
+var g_breakoutload = false;
 
 var scoreloaders = [];
 var mylla = {
@@ -15,33 +16,16 @@ $(document).ready(function()
 	$("a").on("click", function() 
 	{
 	    var id = $(this).data("section");
-	    if(id==='#tic-tac-toe') {
-	    	console.log("mylla");
-	    }
-	    if(id==='#pacman') {
-	    	console.log("pacman");
-	    }
-	    if(id==='#breakout') {
-	    	console.log("breakout");
-	    }
 
-
-	    if(old_id !== undefined && old_id === "#pacman" && id !== "#pacman") {
-	    	stopPacman();
-	    } 
-	    else if(id === "#pacman" && old_id !== "#pacman" && g_pacmanload) {
-	    	restartPacman();
-	    }
+	    startStopPacman(id, old_id);
+	    startStopBreakout(id, old_id);
 
 	    if(old_id !== id || old_id === undefined) 
 	    {
 		    $("section:visible").fadeOut(function() 
 		    {
-		    	if(id === "#pacman") {
+		    	maybeLoadPacman(id);
 
-		    		if(!g_pacmanload) loadPacman();
-		    		g_pacmanload = true;
-		    	}
 		        $(id).fadeIn();
 		        old_id = id;
 		    });
@@ -49,8 +33,29 @@ $(document).ready(function()
 	});
 });
 
+
+////////////////////////////
+///PACMAN management
+////////////////////
+
+function maybeLoadPacman(id) {
+	if(id === "#pacman") {
+		if(!g_pacmanload) loadPacman();
+		g_pacmanload = true;
+	}
+}
+
+function startStopPacman(id, oldid){
+
+	if(oldid !== undefined && oldid === "#pacman" && id !== "#pacman") {
+	    stopPacman();
+    } 
+    else if(id === "#pacman" && oldid !== "#pacman" && g_pacmanload) {
+    	restartPacman();
+    }
+}
+
 function stopPacman() {
-	//g_isGamePaused = true;
 	main.gameOver();
 }
 
@@ -58,6 +63,43 @@ function restartPacman() {
 	main.revive();
 	g_pausemenu.ON = true;
 }
+
+
+//////////////////////////////
+///BREAKOUT management
+//////////////////////
+
+function maybeLoadBreakout() {
+	if(id === "#breakout") {
+		if(!g_breakoutload) loadBreakout();
+		g_breakoutload = true;
+	}
+}
+
+function startStopBreakout(id, oldid) {
+
+	if(oldid !== undefined && oldid === "#breakout" && id !== "#breakout") {
+	    stopBreakout();
+    } 
+    else if(id === "#breakout" && oldid !== "#breakout" && g_pacmanload) {
+    	restartBreakout();
+    }
+}
+
+function stopBreakout() {
+	g_main.gameOver();
+}
+
+function restartBreakout() {
+	g_main.revive();
+	gb_isUpdatePaused = true;
+}
+
+function loadBreakout() {
+
+}
+
+
 
 
 function loadPacman() {
