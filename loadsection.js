@@ -14,18 +14,15 @@ $(document).ready(function()
 	    startStopBreakout(id, old_id);
 
 	    if(id==='#tic-tac-toe') {
-	    	console.log("mylla");
 	    	highScore = 0;
 	    	updateScore(scoreBoard);
 	    	updateHighscore();
 	    }
 	    if(id==='#pacman') {
-	    	console.log("pacman");
 	    	highScore = 1;
 	    	updateHighscore();
 	    }
 	    if(id==='#breakout') {
-	    	console.log("breakout");
 	    	highScore = 2;
 	    	updateScore(g_levelb.score);
 	    	updateHighscore();
