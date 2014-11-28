@@ -90,9 +90,11 @@ function startStopBreakout(id, oldid) {
 
 	if(oldid !== undefined && oldid === "#breakout" && id !== "#breakout") {
 	    stopBreakout();
+	    console.log("stopBreakout");
     } 
-    else if(id === "#breakout" && oldid !== "#breakout" && g_pacmanload) {
+    else if(id === "#breakout" && oldid !== "#breakout" && g_breakoutload) {
     	restartBreakout();
+    	console.log("restartBreakout");
     }
 }
 
@@ -102,7 +104,7 @@ function stopBreakout() {
 
 function restartBreakout() {
 	g_main.revive();
-	gb_isUpdatePaused = true;
+	//gb_isUpdatePaused = true;
 }
 
 function loadBreakout() {
