@@ -3,8 +3,6 @@ var g_levelb = {
 	bricks : 0,
 	score : 0,
 	win : false,
-	GO_UPLEVEL : 'I'.charCodeAt(0),
-	GO_DOWNLEVEL : 'K'.charCodeAt(0)
 }
 
 g_levelb.Makewall = function (why) {
@@ -40,22 +38,6 @@ g_levelb.Makewall = function (why) {
 }
 
 g_levelb.update = function (du) {
-	if (g_keys[this.GO_UPLEVEL]) {
-        if(this.level<4) {
-        	this.level++;
-        	document.getElementById('breakoutCan').className = "level"+ this.level;
-        	g_ball.reset(true);
-        	eatKey(this.GO_UPLEVEL);
-        }
-    }
-    if (g_keys[this.GO_DOWNLEVEL]) {
-        if(this.level>1) {
-        	this.level--;
-        	document.getElementById('breakoutCan').className = "level"+ this.level;
-        	g_ball.reset(true);
-        	eatKey(this.GO_DOWNLEVEL);
-        }
-    }
     if (this.bricks===0) {
     	if(this.level<4) this.level++;
     	else this.level = 1;
@@ -67,13 +49,10 @@ g_levelb.update = function (du) {
 }
 
 g_levelb.render = function (ctx) {
-	ctx.fillStyle = "white";
-	ctx.font="bold 18px Arial";
-    ctx.fillText("Level: "+this.level,20,15);
-    ctx.fillText("Score: "+this.score,300,15);
+    util.drawPixelText(ctx, 80, 22,"Level: "+this.level, 13, 'white');
+    util.drawPixelText(ctx, 320, 22,"Score: "+this.score, 13, 'white');
     if(this.win) {
-    	ctx.font ="bold 30px Arial";
-    	ctx.fillText("YOU WIN!!", 120,180);
+    	util.drawPixelText(ctx, g_canvasb.width/2, g_canvasb.height/2,"YOU WIN!!", 30, 'white');
     }
 }
 

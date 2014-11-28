@@ -43,10 +43,10 @@ PacMan.prototype.rememberResets = function () {
     this.reset_rotation = this.rotation;
 };
 
-PacMan.prototype.KEY_UP = 38;
-PacMan.prototype.KEY_DOWN  = 40;
-PacMan.prototype.KEY_LEFT   = 37;
-PacMan.prototype.KEY_RIGHT  = 39;
+PacMan.prototype.KEY_UP = keyCode('W');
+PacMan.prototype.KEY_DOWN  = keyCode('S');
+PacMan.prototype.KEY_LEFT   = keyCode('A');
+PacMan.prototype.KEY_RIGHT  = keyCode('D');
 
 // Initial, inheritable, default values
 PacMan.prototype.rotation = 0;

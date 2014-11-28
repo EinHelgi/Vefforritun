@@ -53,6 +53,6 @@ g_paddle.collidesWith = function (prevX, prevY,
 g_paddle.collideswall = function () {
     if(this.cx<this.halfWidth)
         this.cx = this.halfWidth;
-    if(this.cx>g_canvas.width-this.halfWidth)
-        this.cx = g_canvas.width-this.halfWidth;
+    if(this.cx>g_canvasb.width-this.halfWidth)
+        this.cx = g_canvasb.width-this.halfWidth;
 }

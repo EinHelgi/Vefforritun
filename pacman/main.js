@@ -119,7 +119,7 @@ main._doTimerShow = false;
 
 main._debugRender = function (ctx) {
     
-    if (eatKey(TOGGLE_TIMER_SHOW)) this._doTimerShow = !this._doTimerShow;
+    //if (eatKey(TOGGLE_TIMER_SHOW)) this._doTimerShow = !this._doTimerShow;
     
     if (!this._doTimerShow) return;
     

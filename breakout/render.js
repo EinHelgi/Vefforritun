@@ -20,17 +20,17 @@ function renderb(ctx) {
     
     // Process various option toggles
     //
-    if (eatKey(TOGGLE_CLEAR)) g_doClear = !g_doClear;
-    if (eatKey(TOGGLE_BOX)) g_doBox = !g_doBox;
-    if (eatKey(TOGGLE_UNDO_BOX)) g_undoBox = !g_undoBox;
-    if (eatKey(TOGGLE_FLIPFLOP)) g_doFlipFlop = !g_doFlipFlop;
-    if (eatKey(TOGGLE_RENDER)) gbreak_doRender = !gbreak_doRender;
+    //if (eatKey(TOGGLE_CLEAR)) g_doClear = !g_doClear;
+    //if (eatKey(TOGGLE_BOX)) g_doBox = !g_doBox;
+    //if (eatKey(TOGGLE_UNDO_BOX)) g_undoBox = !g_undoBox;
+    //if (eatKey(TOGGLE_FLIPFLOP)) g_doFlipFlop = !g_doFlipFlop;
+    //if (eatKey(TOGGLE_RENDER)) gbreak_doRender = !gbreak_doRender;
     if (eatKey(TOGGLE_SOUND)) g_sound = !g_sound;
     
     // I've pulled the clear out of `renderSimulation()` and into
     // here, so that it becomes part of our "diagnostic" wrappers
     //
-    if (g_doClear) clearCanvas(ctx);
+    clearCanvas(ctx);
     
     // The main purpose of the box is to demonstrate that it is
     // always deleted by the subsequent "undo" before you get to
@@ -43,7 +43,7 @@ function renderb(ctx) {
     
     // The core rendering of the actual game / simulation
     //
-    if (gbreak_doRender) renderSimulationb(ctx);
+    renderSimulationb(ctx);
     
     
     // This flip-flip mechanism illustrates the pattern of alternation

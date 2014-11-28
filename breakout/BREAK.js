@@ -51,6 +51,10 @@ function renderSimulationb(ctx) {
     g_wall.render(ctx);
 
     g_levelb.render(ctx);
+    if(gb_isUpdatePaused) {
+        util.drawPixelText(ctx, g_canvasb.width/2, g_canvasb.height/2,"PAUSED", 30, 'white');
+        util.drawPixelText(ctx, g_canvasb.width/2, g_canvasb.height/2+20,"Press 'P' to continue", 10, 'white');
+    }
 }
 
 // Kick it off
