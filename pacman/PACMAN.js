@@ -142,7 +142,7 @@ function processDiagnostics() {
 
     if (eatKey(KEY_REDWALL)) g_useUglyRedWall = !g_useUglyRedWall;   
 
-    if(eatKey(KEY_AUDIO)) g_audioOn = !g_audioOn; 
+    if (eatKey(KEY_AUDIO)) g_audioOn = !g_audioOn; 
 }
 
 
