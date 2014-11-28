@@ -1,4 +1,9 @@
 var pacmanload = false;
+var scoreloaders = [];
+var mylla = {
+	cach : 'myllaHighscore',
+	php : "getMyllaHighscore.php"
+};
 
 var old_id;
 
@@ -7,6 +12,16 @@ $(document).ready(function()
 	$("a").on("click", function() 
 	{
 	    var id = $(this).data("section");
+	    if(id==='#tic-tac-toe') {
+	    	console.log("mylla");
+	    }
+	    if(id==='#pacman') {
+	    	console.log("pacman");
+	    }
+	    if(id==='#breakout') {
+	    	console.log("breakout");
+	    }
+
 
 	    if(old_id !== undefined && old_id === "#pacman" && id !== "#pacman") {
 	    	removeElement("#pacman");
