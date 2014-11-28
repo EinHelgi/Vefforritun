@@ -150,6 +150,11 @@ function loadPacman() {
 	document.body.parentNode.appendChild(main);
 	*/
 
+	var handleMouse = document.createElement('script');
+	handleMouse.src = 'pacman/handleMouse.js';
+	handleMouse.type = 'text/javascript';
+	document.body.parentNode.appendChild(handleMouse);
+
 	var PACMAN = document.createElement('script');
 	PACMAN.src = 'pacman/PACMAN.js';
 	PACMAN.type = 'text/javascript';
