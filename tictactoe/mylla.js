@@ -15,7 +15,7 @@ var board = [0,0,0,0,0,0,0,0,0, false];
 var tileSize = 150;
 var yourMove = true;
 var alienMove = false
-var scoreBoard = ['current', 0];
+var scoreBoard = 0;
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -69,21 +69,16 @@ function test(data) {
         yourMove = board[9];
         alienMove = !alienMove;
         if(data[1]==="tie") {
-            scoreBoard[1]++;
+            scoreBoard++;
             $(".currentPlayer").text('You tied!');
         }
         if(data[1]==="alien") {
-            scoreBoard[1]--;
+            scoreBoard--;
             $(".currentPlayer").text('The Alien won!');
         }
-        updateScore();
+        updateScore(scoreBoard);
     }
 
-}
-
-function updateScore() {
-    $(".player").text(scoreBoard[0]);
-    $(".totScore").text(scoreBoard[1]);
 }
 
 function checkBoard() {
@@ -191,5 +186,5 @@ function drawO(ctx, x, y) {
 }
 
 drawBoard(gb_ctx);
-updateScore();
+updateScore(scoreBoard);
 updateHighscore();

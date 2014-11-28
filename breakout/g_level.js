@@ -63,6 +63,7 @@ g_levelb.update = function (du) {
     	g_ball.reset(false);
     	if (this.level===1) this.win = true;
     }
+    updateScore(g_levelb.score);
 }
 
 g_levelb.render = function (ctx) {

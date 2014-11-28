@@ -1,3 +1,5 @@
+
+
 var highScore = 0;
 var cach = ['myllaHighscore', 'pacmanHighscore', 'breakHighscore']
 var test = ['hallo', 'this', 'stuff'];
@@ -6,7 +8,6 @@ function updateHighscore() {
     data = JSON.parse(localStorage.getItem(cach[highScore]));
     if(data===null) {
         $.get("getHighscore.php", {'witch[]':highScore}, function(data) {addToHtml(data);}, 'json');
-        console.log(highScore);
     }
     else {
         addToHtml(data);
@@ -16,7 +17,6 @@ function updateHighscore() {
 
 function addToHtml(data) {
     localStorage.setItem(cach[highScore], JSON.stringify(data));
-    console.log(data);
     $('.highplayer').empty();
     $('.highScore').empty();
     for (var i=0;i<data.length;++i) {
@@ -45,4 +45,8 @@ function insertToHighscore(data){
     newScore.splice(20);
 
     localStorage.setItem(cach[highScore], JSON.stringify(newScore));
+}
+
+function updateScore(score) {
+    $(".totScore").text(score);
 }

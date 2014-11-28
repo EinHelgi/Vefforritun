@@ -16,6 +16,7 @@ $(document).ready(function()
 	    if(id==='#tic-tac-toe') {
 	    	console.log("mylla");
 	    	highScore = 0;
+	    	updateScore(scoreBoard);
 	    	updateHighscore();
 	    }
 	    if(id==='#pacman') {
@@ -26,6 +27,7 @@ $(document).ready(function()
 	    if(id==='#breakout') {
 	    	console.log("breakout");
 	    	highScore = 2;
+	    	updateScore(g_levelb.score);
 	    	updateHighscore();
 	    }
 
@@ -116,7 +118,7 @@ function stopBreakout() {
 
 function restartBreakout() {
 	g_main.revive();
-	//gb_isUpdatePaused = true;
+	gb_isUpdatePaused = true;
 }
 
 function loadBreakout() {
