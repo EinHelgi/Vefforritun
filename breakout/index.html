@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <link rel="stylesheet" href="breakoutstyle.css">
+        <title>Breakout!</title>
+    </head>
+    <body>
+        <canvas id="breakoutCan" class= "level1" style="border: 1px solid black;" height="400" width="400">
+        Sorry, but your browser does not support the HTML5 canvas tag
+        </canvas>
+        <audio src="hit1.wav" id="hit" preload="auto">Your browser does not support the audio tag</audio>
+        <audio src="shot.wav" id="hitpaddle" preload="auto">Your browser does not support the audio tag</audio>
+        <audio src="start.wav" id="start" preload="auto">Your browser does not support the audio tag</audio>
+        <audio src="cartoonshot.wav" id="shoot" preload="auto">Your browser does not support the audio tag</audio>
+        <h2>PLAYER CONTROLS:</h2>
+        <div class="controls">
+            <p>N: New Game</p>
+            <p>P: Pause game</p>
+            <p>Z: Sound off/on</p>
+            <p>Q: Quit game</p>
+            <p>W: Shoot ball</p>
+            <p>A: Move paddle left</p>
+            <p>D: Move paddle right</p>
+            <p>I: Go up a level</p>
+            <p>K: Go down a level</p>
+        </div>
+        <div id="output"></div>
+        <script src="utils.js"></script>
+        <script src="g_keys.js"></script>
+        <script src="g_paddle.js"></script>
+        <script src="g_wall.js"></script>
+        <script src="g_level.js"></script>
+        <script src="g_ball.js"></script>
+        <script src="g_main.js"></script>
+        <script src="update.js"></script>
+        <script src="render.js"></script>
+        <script src="BREAK.js"></script>
+    </body>
+</html>

@@ -36,7 +36,7 @@ nav ul
 	list-style: none;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 451px;
+	max-width: 452px;
 	height: 100%;
 }
 
@@ -97,6 +97,27 @@ section {
 	padding-top: 3em;
 	padding-left: 2em;
 	text-align: center;
+}
+
+#highscore h3 {
+	text-align: center;
+	padding: 1em;
+}
+
+.scoreboard {
+	box-sizing: border-box;
+	float: left;
+	width: 50%;
+	text-align: center; 
+	padding-bottom: 1em;
+}
+
+#highscore ul li {
+	list-style: none;
+}
+
+#highscore form {
+	margin: auto;
 }
 
 #tic-tac-toe {
