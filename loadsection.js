@@ -1,4 +1,4 @@
-var pacmanload = false;
+var g_pacmanload = false;
 
 var old_id;
 
@@ -11,8 +11,9 @@ $(document).ready(function()
 	    if(old_id !== undefined && old_id === "#pacman" && id !== "#pacman") {
 	    	removeElement("#pacman");
 	    } 
-	    else if(id === "#pacman" && old_id !== "#pacman" && pacmanload) {
+	    else if(id === "#pacman" && old_id !== "#pacman" && g_pacmanload) {
 	    	addPacManCanvas("#pacman");
+	 		//loadPacman();
 	    }
 
 	    if(old_id !== id || old_id === undefined) 
@@ -21,8 +22,8 @@ $(document).ready(function()
 		    {
 		    	if(id === "#pacman") {
 
-		    		pacmanload = true;
 		    		loadPacman();
+		    		g_pacmanload = true;
 		    	}
 		        $(id).fadeIn();
 		        old_id = id;
@@ -184,5 +185,4 @@ function loadPacman() {
 	PACMAN.src = 'pacman/PACMAN.js';
 	PACMAN.type = 'text/javascript';
 	document.body.parentNode.appendChild(PACMAN);
-
 }
