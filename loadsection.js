@@ -15,17 +15,17 @@ $(document).ready(function()
 
 	    if(id==='#tic-tac-toe') {
 	    	console.log("mylla");
-	    	highscore = 0;
+	    	highScore = 0;
 	    	updateHighscore();
 	    }
 	    if(id==='#pacman') {
 	    	console.log("pacman");
-	    	highscore = 1;
+	    	highScore = 1;
 	    	updateHighscore();
 	    }
 	    if(id==='#breakout') {
 	    	console.log("breakout");
-	    	highscore = 2;
+	    	highScore = 2;
 	    	updateHighscore();
 	    }
 

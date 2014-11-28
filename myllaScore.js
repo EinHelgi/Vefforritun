@@ -15,7 +15,7 @@ $('form').submit(function(e)
 		var score = $('.totScore').text();
 		insertToHighscore([name, score]);
 	}
-
+	console.log('form');
 	updateHighscore();
 
 	e.preventDefault();
