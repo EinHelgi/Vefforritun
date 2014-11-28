@@ -5,12 +5,12 @@
 	background-color: gray;
 }
 .level3 {
-	background: url('TransDark.png') 100%;
+	background: url('breakout/TransDark.png') 100%;
 	background-repeat: no-repeat;
 	background-size: 400px 400px;
 }
 .level4 {
-	background: url('Grid.png') 100%;
+	background: url('breakout/Grid.png') 100%;
 	background-repeat: no-repeat;
 	background-size: 400px 400px;
 }

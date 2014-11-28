@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Lokaverkefni</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="breakoutstyle.css">
 		<link href='//fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 		<script src="jquery-1.11.1.min.js"></script>
 	</head>
@@ -36,7 +37,7 @@
 			            <label class="currentPlayer">Your turn</label>
 					</section>
 					<section id="breakout">
-						<canvas id="breakoutCan" class= "level1" style="border: 1px solid black;" height="400" width="400">
+						<canvas id="breakoutCan" class= "level1" height="400" width="400">
 				        Sorry, but your browser does not support the HTML5 canvas tag
 				        </canvas>
 				        <audio src="breakout/hit1.wav" id="hit" preload="auto">Your browser does not support the audio tag</audio>
@@ -75,14 +76,10 @@
             		</div>
             		<form>
                 		Player name: <input type="text" class="pName" name="name" placeholder="put name here to submit">
-                		<button id="submitButton" type="submit">Submit your score</button>
+                		<input class="submitButton" type="submit" value="Submit your score">
             		</form>
 				</div>
 			</div>
-
-			<a href="tictactoe/index.html">Mylla</a>
-			<a href="pacman/index.html">Pacman</a>
-
 		</main>
 		<footer>
 			<h2>Contact info:</h2>

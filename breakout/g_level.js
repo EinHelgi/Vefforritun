@@ -40,10 +40,10 @@ g_levelb.Makewall = function (why) {
 }
 
 g_levelb.update = function (du) {
-	/*if (g_keys[this.GO_UPLEVEL]) {
+	if (g_keys[this.GO_UPLEVEL]) {
         if(this.level<4) {
         	this.level++;
-        	document.getElementById('myCanvas').className = "level"+ this.level;
+        	document.getElementById('breakoutCan').className = "level"+ this.level;
         	g_ball.reset(true);
         	eatKey(this.GO_UPLEVEL);
         }
@@ -51,15 +51,15 @@ g_levelb.update = function (du) {
     if (g_keys[this.GO_DOWNLEVEL]) {
         if(this.level>1) {
         	this.level--;
-        	document.getElementById('myCanvas').className = "level"+ this.level;
+        	document.getElementById('breakoutCan').className = "level"+ this.level;
         	g_ball.reset(true);
         	eatKey(this.GO_DOWNLEVEL);
         }
-    }*/
+    }
     if (this.bricks===0) {
     	if(this.level<4) this.level++;
     	else this.level = 1;
-    	document.getElementById('breakouCan').className = "level"+ this.level;
+    	document.getElementById('breakoutCan').className = "level"+ this.level;
     	g_ball.reset(false);
     	if (this.level===1) this.win = true;
     }

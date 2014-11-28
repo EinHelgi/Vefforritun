@@ -29,7 +29,7 @@ function addToHtml(data) {
 function insertToHighscore(data){
 
     var oldScore = JSON.parse(localStorage.getItem(cach[highScore]));
-    //console.log("oldscore: "+oldScore);
+    console.log("oldscore: "+oldScore);
     var done = false;
     var newScore = [];
     for (var i=0; i<oldScore.length; i++) {
@@ -37,12 +37,12 @@ function insertToHighscore(data){
             newScore.push(data[0]);
             newScore.push(data[1]);
             done = true;
-            //console.log('i am here');
+            console.log('i am here');
         }
         newScore.push(oldScore[i]);
         i++;
         newScore.push(oldScore[i]);
-        //console.log("newScore: "+newScore);
+        console.log("newScore: "+newScore);
     }
     newScore.splice(20);
 
