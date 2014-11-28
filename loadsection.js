@@ -26,11 +26,10 @@ $(document).ready(function()
 
 
 	    if(old_id !== undefined && old_id === "#pacman" && id !== "#pacman") {
-	    	removeElement("#pacman");
+	    	stopPacman();
 	    } 
 	    else if(id === "#pacman" && old_id !== "#pacman" && g_pacmanload) {
-	    	addPacManCanvas("#pacman");
-	 		//loadPacman();
+	    	restartPacman();
 	    }
 
 	    if(old_id !== id || old_id === undefined) 
@@ -39,7 +38,7 @@ $(document).ready(function()
 		    {
 		    	if(id === "#pacman") {
 
-		    		loadPacman();
+		    		if(!g_pacmanload) loadPacman();
 		    		g_pacmanload = true;
 		    	}
 		        $(id).fadeIn();
@@ -49,18 +48,14 @@ $(document).ready(function()
 	});
 });
 
-function removeElement(id) {
-	$(id + " canvas").remove();
+function stopPacman() {
+	//g_isGamePaused = true;
+	main.gameOver();
 }
 
-function addPacManCanvas(id) {
-	/*var pacmanCanvas = $('<canvas/>', {'id':'myCanvas', 'class:':'canvas'});
-		pacmanCanvas[0].width = 448;
-		pacmanCanvas[0].height = 576;
-	$(id + " canvas").append(pacmanCanvas);*/
-
-	$('<canvas>').attr({id: 'myCanvas'}).css({width:448, height:576}).appendTo(id);
-	console.log("bacon");
+function restartPacman() {
+	main.revive();
+	g_pausemenu.ON = true;
 }
 
 
