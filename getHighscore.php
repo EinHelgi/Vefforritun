@@ -6,6 +6,8 @@ header('Content-Type: application/json');
 
 ini_set('display_errors', 'on');
 
+//$witch = $_GET['witch'];
+
 try {
 	/**************************************
 	* Create databases and                *
@@ -13,15 +15,11 @@ try {
 	**************************************/
 
 	// Create (connect to) SQLite database in file
-	$file_db = new SQLite3('../highscore.db');
+	$file_db = new SQLite3('standardScore.db');
 
-	/**************************************
-	* Create table                        *
-	**************************************/
-
-	// Create table Items
-	$file_db->exec("CREATE TABLE IF NOT EXISTS myllaScore (name varchar(30),	score int)"); 
-
+	//if($witch[0]===0) $query = $file_db->prepare("SELECT * FROM myllaScore ORDER BY score DESC LIMIT 10;");
+	//if($witch[0]===1) $query = $file_db->prepare("SELECT * FROM pacmanScore ORDER BY score DESC LIMIT 10;");
+	//if($witch[0]===2) $query = $file_db->prepare("SELECT * FROM breakoutScore ORDER BY score DESC LIMIT 10;");
 	$query = $file_db->prepare("SELECT * FROM myllaScore ORDER BY score DESC LIMIT 10;");
 
 	$result = $query->execute();

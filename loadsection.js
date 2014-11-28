@@ -1,13 +1,6 @@
 
 var g_pacmanload = false;
 
-var scoreloaders = [];
-var mylla = {
-	cach : 'myllaHighscore',
-	php : "getMyllaHighscore.php"
-};
-
-
 var old_id;
 
 $(document).ready(function()
@@ -17,12 +10,18 @@ $(document).ready(function()
 	    var id = $(this).data("section");
 	    if(id==='#tic-tac-toe') {
 	    	console.log("mylla");
+	    	highscore = 0;
+	    	updateHighscore();
 	    }
 	    if(id==='#pacman') {
 	    	console.log("pacman");
+	    	highscore = 1;
+	    	updateHighscore();
 	    }
 	    if(id==='#breakout') {
 	    	console.log("breakout");
+	    	highscore = 2;
+	    	updateHighscore();
 	    }
 
 
