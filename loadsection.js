@@ -33,7 +33,8 @@ $(document).ready(function()
 	    {
 		    $("section:visible").fadeOut(function() 
 		    {
-		    	maybeLoadPacman(id);
+		    	maybeInitPacman(id);
+		    	maybeInitBreakout(id);
 
 		        $(id).fadeIn();
 		        old_id = id;
@@ -47,7 +48,7 @@ $(document).ready(function()
 ///PACMAN management
 ////////////////////
 
-function maybeLoadPacman(id) {
+function maybeInitPacman(id) {
 	if(id === "#pacman") {
 		if(!g_pacmanload) loadPacman();
 		g_pacmanload = true;
@@ -78,7 +79,7 @@ function restartPacman() {
 ///BREAKOUT management
 //////////////////////
 
-function maybeLoadBreakout() {
+function maybeInitBreakout(id) {
 	if(id === "#breakout") {
 		if(!g_breakoutload) loadBreakout();
 		g_breakoutload = true;
@@ -106,6 +107,10 @@ function restartBreakout() {
 
 function loadBreakout() {
 
+	var BREAK = document.createElement('script');
+	BREAK.src = 'breakout/BREAK.js';
+	BREAK.type = 'text/javascript';
+	document.body.parentNode.appendChild(BREAK);
 }
 
 
