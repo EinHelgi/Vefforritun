@@ -22,6 +22,8 @@ $(document).ready(function()
 });
 
 function loadPacman() {
+
+	/*
 	var globals = document.createElement('script');
 	globals.src = 'pacman/globals.js';
 	globals.type = 'text/javascript';
@@ -146,6 +148,7 @@ function loadPacman() {
 	main.src = 'pacman/main.js';
 	main.type = 'text/javascript';
 	document.body.parentNode.appendChild(main);
+	*/
 
 	var PACMAN = document.createElement('script');
 	PACMAN.src = 'pacman/PACMAN.js';
