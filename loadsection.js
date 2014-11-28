@@ -1,12 +1,21 @@
 var pacmanload = false;
 
+var old_id;
+
 $(document).ready(function()
 {
 	$("a").on("click", function() 
 	{
 	    var id = $(this).data("section");
 
-	    if(!pacmanload || id === "#tic-tac-toe" || id === "#breakout") 
+	    if(old_id !== undefined && old_id === "#pacman" && id !== "#pacman") {
+	    	removeElement("#pacman");
+	    } 
+	    else if(id === "#pacman" && old_id !== "#pacman" && pacmanload) {
+	    	addPacManCanvas("#pacman");
+	    }
+
+	    if(old_id !== id || old_id === undefined) 
 	    {
 		    $("section:visible").fadeOut(function() 
 		    {
@@ -16,10 +25,26 @@ $(document).ready(function()
 		    		loadPacman();
 		    	}
 		        $(id).fadeIn();
+		        old_id = id;
 		    });
 		 }
 	});
 });
+
+function removeElement(id) {
+	$(id + " canvas").remove();
+}
+
+function addPacManCanvas(id) {
+	/*var pacmanCanvas = $('<canvas/>', {'id':'myCanvas', 'class:':'canvas'});
+		pacmanCanvas[0].width = 448;
+		pacmanCanvas[0].height = 576;
+	$(id + " canvas").append(pacmanCanvas);*/
+
+	$('<canvas>').attr({id: 'myCanvas'}).css({width:448, height:576}).appendTo(id);
+	console.log("bacon");
+}
+
 
 function loadPacman() {
 

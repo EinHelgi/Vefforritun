@@ -74,24 +74,45 @@ main {
 	height: 100%;
 }
 
+#wrapper {
+	margin: auto;
+	max-width: 900px;
+	min-width: 450px;
+}
+
+#game {
+	box-sizing: border-box;
+	float: left;
+	width: 450px;
+}
+
 section {
 	display: none;
 }
 
+#highscore {
+	box-sizing: border-box;
+	float: left;
+	width: 450px;
+	padding-top: 3em;
+	padding-left: 2em;
+	text-align: center;
+}
+
 #tic-tac-toe {
 	display: block;
-	padding-top: 13em;
-	padding-left: 3em;
+	padding-top: 3em;
+	padding-right: 2em;
 }
 
 #breakout {
-	padding-top: 13em;
-	padding-left: 3em;
+	padding-top: 3em;
+	padding-right: 2em;
 }
 
 #pacman {
-	padding-top: 13em;
-	padding-left: 3em;
+	padding-top: 3em;
+	padding-right: 2em;
 }
 
 footer {

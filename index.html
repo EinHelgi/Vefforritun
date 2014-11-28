@@ -26,18 +26,24 @@
 					</li>
 				</ul>
 			</nav>
-
-			<section id="tic-tac-toe">
-				<img src="http://i.imgur.com/iN4De.jpg">
-			</section>
-			<section id="breakout">
-				<img src="http://m.memegen.com/ie2327.jpg">
-			</section>
-			<section id="pacman">
-			    <canvas id="myCanvas" class="canvas" width="448" height="576">
-				    Sorry, but your browser does not support the HTML5 canvas tag.
-				</canvas>
-			</section>
+			<div id="wrapper">
+				<div id="game">
+					<section id="tic-tac-toe">
+						<img src="http://i.imgur.com/iN4De.jpg">
+					</section>
+					<section id="breakout">
+						<img src="http://m.memegen.com/ie2327.jpg">
+					</section>
+					<section id="pacman">
+					    <canvas id="myCanvas" class="canvas" width="448" height="576">
+						    Sorry, but your browser does not support the HTML5 canvas tag.
+						</canvas>
+					</section>
+				</div>
+				<div id="highscore">
+					Highscore
+				</div>
+			</div>
 
 			<a href="tictactoe/index.html">Mylla</a>
 			<a href="pacman/index.html">Pacman</a>
@@ -58,7 +64,6 @@
 	    <script src="pacman/consts.js"></script>
 	    <script src="pacman/util.js"></script>
 	    <script src="pacman/keys.js"></script>
-	    
 
 	    <script src="pacman/spatialManager.js"></script>
 	    <script src="pacman/entityManager.js"></script>
