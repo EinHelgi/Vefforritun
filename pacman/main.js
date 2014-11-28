@@ -103,12 +103,12 @@ window.requestAnimationFrame =
     window.webkitRequestAnimationFrame;    // Safari
 
 // This needs to be a "global" function, for the "window" APIs to callback to
-function mainIterFrame(frameTime) {
+function pac_mainIterFrame(frameTime) {
     main.iter(frameTime);
 }
 
 main._requestNextIteration = function () {
-    window.requestAnimationFrame(mainIterFrame);
+    window.requestAnimationFrame(pac_mainIterFrame);
 };
 
 // Mainloop-level debug-rendering

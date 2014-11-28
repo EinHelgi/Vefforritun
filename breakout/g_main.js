@@ -84,12 +84,12 @@ window.requestAnimationFrame =
   window.msRequestAnimationFrame;
 
 // This needs to be a "global" function, for the "window" APIs to callback to
-function mainIterFrame(frameTime) {
+function break_mainIterFrame(frameTime) {
     g_main.iter(frameTime);
 }
 
 g_main._requestNextIteration = function () {
-    window.requestAnimationFrame(mainIterFrame);
+    window.requestAnimationFrame(break_mainIterFrame);
 };
 
 // Mainloop-level debug-rendering
