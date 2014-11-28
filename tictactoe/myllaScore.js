@@ -1,4 +1,22 @@
 $('form').submit(function(e)
 {
-	console.log("you have submitted");
+	var form = $(this);
+	var nameElement = form.find('input.pName');
+	var name = nameElement.val();
+	var message;
+	if (name === '')
+	{
+		message = 'Fylla verður út í nafn';
+		nameElement.addClass('invalid');
+	}
+	else
+	{
+		nameElement.removeClass('invalid');
+		var score = $('.totScore').text();
+		insertToHighscore([name, score]);
+	}
+
+	updateHighscore();
+
+	e.preventDefault();
 });

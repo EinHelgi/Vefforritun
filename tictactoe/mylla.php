@@ -39,13 +39,13 @@ try {
 
 	$result = $query->execute();
 
-	$data = $result->fetchArray();
+	$data = $result->fetchArray(SQLITE3_NUM);
 	echo json_encode($data);
 
 	$file_db = null;
 }
-catch(PDOException $e) {
-	// Print PDOException message
+catch(Exception $e) {
+	// Print Exception message
 	echo $e->getMessage();
 }
 ?>
