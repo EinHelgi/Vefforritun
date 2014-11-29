@@ -42,7 +42,7 @@ g_paddle.collidesWith = function (prevX, prevY,
             nextX - r <= this.cx + this.halfWidth) {
             // It's a hit!
             g_ball.checkangle(this.cx, this.halfHeight, this.halfWidth);
-            if (g_sound) document.getElementById('hitpaddle').play();
+            if (g_sound) g_hitpaddleaudio.play();
             return true;
         }
     }

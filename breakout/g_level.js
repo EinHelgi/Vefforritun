@@ -5,8 +5,13 @@ var g_levelb = {
 	win : false,
 }
 
+var g_hitaudio =new Audio('breakout/hit1.wav');
+var g_hitpaddleaudio =new Audio('breakout/shot.wav');
+var g_startaudio =new Audio('breakout/start.wav');
+var g_shootaudio =new Audio('breakout/cartoonshot.wav');
+
 g_levelb.Makewall = function (why) {
-	if (g_sound) document.getElementById('start').play();
+	if (g_sound) g_startaudio.play();
 	this.bricks = 0;
 	if(why)this.score = 0;
 	var strength = 1;

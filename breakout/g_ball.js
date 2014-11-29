@@ -19,7 +19,7 @@ g_ball.update = function (du) {
     if ((this.xVel===0 && this.yVel===0))
     {
         if (g_keys[this.GO_SHOOTBALL]) {
-            if (g_sound) document.getElementById('shoot').play();
+            if (g_sound) g_shootaudio.play();
             this.xVel = this.startxVel;
             this.yVel = this.startyVel;
             g_levelb.win = false;

@@ -58,7 +58,7 @@ g_wall.collidesWith = function (prevX, prevY, nextX, nextY) {
 						g_levelb.score++;
 					}
 					inside = true;
-					if (g_sound) document.getElementById('hit').play();
+					if (g_sound) g_hitaudio.play();
 				}
 	if (inside) {
 		if(ballposX<nextballposX || ballposX>nextballposX)

@@ -72,12 +72,12 @@ function test(data) {
         alienMove = !alienMove;
         if(data[1]==="tie") {
             scoreBoard++;
-            $(".currentPlayer").text('You tied!');
+            $(".currentPlayer").text('You tied! - you gain a point');
             playing = false;
         }
         if(data[1]==="alien") {
             scoreBoard--;
-            $(".currentPlayer").text('The Alien won!');
+            $(".currentPlayer").text('The Alien won! - you loose a point');
             playing = false;
         }
         updateScore(scoreBoard);
@@ -151,17 +151,17 @@ function drawAll(ctx) {
 function drawBoard(ctx) {
     var oldstyle = ctx.strokeStyle;
     ctx.strokeStyle = 'black';
-    ctx.lineWidth=5;
+    ctx.lineWidth=2;
     ctx.beginPath();
-    ctx.rect(0,0,tileSize,tileSize);
-    ctx.rect(tileSize,0,tileSize,tileSize);
-    ctx.rect(tileSize*2,0,tileSize,tileSize);
-    ctx.rect(0,tileSize,tileSize,tileSize);
-    ctx.rect(tileSize,tileSize,tileSize,tileSize);
-    ctx.rect(tileSize*2,tileSize,tileSize,tileSize);
-    ctx.rect(0,tileSize*2,tileSize,tileSize);
-    ctx.rect(tileSize,tileSize*2,tileSize,tileSize);
-    ctx.rect(tileSize*2,tileSize*2,tileSize,tileSize);
+    ctx.rect(1,1,gb_canvas.width-2, gb_canvas.height-2);
+    ctx.moveTo(tileSize,0);
+    ctx.lineTo(tileSize, tileSize*3);
+    ctx.moveTo(tileSize*2, tileSize*3);
+    ctx.lineTo(tileSize*2, 0);
+    ctx.moveTo(0, tileSize);
+    ctx.lineTo(tileSize*3,tileSize);
+    ctx.moveTo(0, tileSize*2);
+    ctx.lineTo(tileSize*3, tileSize*2);
     ctx.stroke();
     ctx.strokeStyle = oldstyle;
 } 
