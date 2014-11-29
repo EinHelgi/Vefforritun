@@ -24,7 +24,6 @@ $(document).ready(function()
 	    }
 	    if(id==='#breakout') {
 	    	highScore = 2;
-	    	updateScore(g_levelb.score);
 	    	updateHighscore();
 	    }
 
@@ -58,7 +57,6 @@ $(document).ready(function()
 			var score = $('.totScore').text();
 			insertToHighscore([name, score]);
 		}
-		console.log('form');
 		updateHighscore();
 
 		e.preventDefault();
@@ -94,6 +92,7 @@ function stopPacman() {
 function restartPacman() {
 	main.revive();
 	g_pausemenu.ON = true;
+	updateScore(highscore);
 }
 
 function loadPacman() {
@@ -139,6 +138,7 @@ function stopBreakout() {
 function restartBreakout() {
 	g_main.revive();
 	gb_isUpdatePaused = true;
+	updateScore(g_levelb.score);
 }
 
 function loadBreakout() {
