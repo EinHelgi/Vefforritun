@@ -77,7 +77,6 @@ nav ul li a
 main {
 	background: rgb(44, 62, 80);
 	min-height: 54em;
-	height: 100%;
 }
 
 #wrapper {
@@ -122,6 +121,17 @@ section {
 	font-size: 1.5em;
 }
 
+.result {
+	display: none;
+	text-align: center;
+	color: red;
+}
+
+.invalid {
+	border: 1px solid #BF6566; 
+	background: #FCEDED;
+}
+
 #highscore ul li {
 	list-style: none;
 }
@@ -161,4 +171,31 @@ footer h2 {
 footer div {
 	margin-top: 0.5em;
 	margin-left: 3em;
+}
+
+@media only screen and (max-device-width : 916px) {
+	main {
+		height: 1300px;
+	}
+	#game {
+		float: none;
+		margin: auto;
+	}
+	#highscore {
+		float: none;
+		margin: auto;
+	}
+}
+@media only screen and (max-width: 916px) {
+	main {
+		height: 1300px;
+	}
+	#game {
+		float: none;
+		margin: auto;
+	}
+	#highscore {
+		float: none;
+		margin: auto;
+	}
 }

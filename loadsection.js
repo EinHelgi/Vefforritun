@@ -39,12 +39,14 @@ $(document).ready(function()
 		{
 			message = 'Fylla verður út í nafn';
 			nameElement.addClass('invalid');
+			$('div.result').show();
 		}
 		else
 		{
 			nameElement.removeClass('invalid');
 			var score = $('.totScore').text();
 			insertToHighscore([name, score]);
+			$('div.result').hide();
 		}
 		updateHighscore();
 
