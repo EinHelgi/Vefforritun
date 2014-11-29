@@ -13,20 +13,7 @@ $(document).ready(function()
 	    startStopPacman(id, old_id);
 	    startStopBreakout(id, old_id);
 
-	    if(id==='#tic-tac-toe') {
-	    	highScore = 0;
-	    	updateScore(scoreBoard);
-	    	updateHighscore();
-	    }
-	    if(id==='#pacman') {
-	    	highScore = 1;
-	    	updateHighscore();
-	    }
-	    if(id==='#breakout') {
-	    	highScore = 2;
-	    	updateScore(g_levelb.score);
-	    	updateHighscore();
-	    }
+	    updateHighscoreBoard(id);
 
 	    if(old_id !== id || old_id === undefined) 
 	    {
@@ -65,6 +52,23 @@ $(document).ready(function()
 	});
 });
 
+
+function updateHighscoreBoard(id) {
+	if(id === '#tic-tac-toe') {
+	    	highScore = 0;
+	    	updateScore(scoreBoard);
+	    	updateHighscore();
+    }
+    if(id === '#pacman') {
+    	highScore = 1;
+    	updateHighscore();
+    }
+    if(id === '#breakout') {
+    	highScore = 2;
+    	updateScore(g_levelb.score);
+    	updateHighscore();
+    }
+}
 
 ////////////////////////////
 ///PACMAN management
