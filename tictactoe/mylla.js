@@ -16,6 +16,7 @@ var tileSize = 150;
 var yourMove = true;
 var alienMove = false
 var scoreBoard = 0;
+var playing = true;
 
 /*
 0        1         2         3         4         5         6         7         8         9
@@ -34,7 +35,7 @@ function handleMouse(evt) {
     g_mouseX = evt.clientX - rect.left;
     g_mouseY = evt.clientY - rect.top;
 
-    if(yourMove) {
+    if(yourMove && playing) {
         checkBoard();
         if(!yourMove) {
             $(".currentPlayer").text('Alien is thinking.....');
@@ -52,6 +53,7 @@ function play() {
     utilb.clearCanvas(gb_ctx);
     drawAll(gb_ctx);
     if(board[9]===true)getFromPhp();
+    playing =true;
 }
 
 function getFromPhp() {
@@ -71,10 +73,12 @@ function test(data) {
         if(data[1]==="tie") {
             scoreBoard++;
             $(".currentPlayer").text('You tied!');
+            playing = false;
         }
         if(data[1]==="alien") {
             scoreBoard--;
             $(".currentPlayer").text('The Alien won!');
+            playing = false;
         }
         updateScore(scoreBoard);
     }
