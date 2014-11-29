@@ -1,5 +1,5 @@
 main {
-	background: rgb(44, 62, 80);
+	background: rgb(52, 73, 94);
 	min-height: 54em;
 }
 
@@ -17,20 +17,21 @@ main {
 	width: 450px;
 }
 
-#playbutton {
-  -webkit-border-radius: 3;
-  -moz-border-radius: 3;
-  border-radius: 3px;
-  color: #ffffff;
-  font-size: 15px;
-  background: #188ddb;
-  padding: 8px 18px 8px 18px;
-  text-decoration: none;
+#playButton {
+	border-radius: 1px;
+	color: #000000;
+	font-size: 22px;
+	background: #207bab;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 100%;
+	text-decoration: none;
 }
 
-#playbutton:hover {
-  background: #f04e03;
-  text-decoration: none;
+#playButton:hover {
+	/*background: #FF6B00;*/
+	background: #F22613;
+	text-decoration: none;
 }
 
 section {
