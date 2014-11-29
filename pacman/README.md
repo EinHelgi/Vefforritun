@@ -1,4 +1,0 @@
-PacMan
-======
-
-Tölvuleikjaforritun
