@@ -189,6 +189,6 @@ function drawO(ctx, x, y) {
     ctx.strokeStyle = oldstyle;
 }
 
-drawBoard(gb_ctx);
+drawAll(gb_ctx);
 updateScore(scoreBoard);
 updateHighscore();
