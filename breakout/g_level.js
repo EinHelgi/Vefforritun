@@ -2,7 +2,7 @@ var g_levelb = {
 	level : 1,
 	bricks : 0,
 	score : 0,
-	win : false,
+	win : false
 }
 
 var g_hitaudio =new Audio('breakout/hit1.wav');
