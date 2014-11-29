@@ -17,8 +17,6 @@ main {
 	width: 450px;
 }
 
-
-
 #playButton {
 	border-radius: 1px;
 	border: none;
@@ -35,7 +33,6 @@ main {
 
 #playButton:hover {
 	background: #FF6B00;
-	/*background: #F22613;*/
 	text-decoration: none;
 }
 

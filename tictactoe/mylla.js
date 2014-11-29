@@ -168,7 +168,7 @@ function drawBoard(ctx) {
 
 function drawX(ctx, x, y) {
     var oldstyle = ctx.strokeStyle;
-    ctx.strokeStyle = 'red';
+    ctx.strokeStyle = '#F22613';
     ctx.lineWidth=20;
     ctx.beginPath();
     ctx.moveTo(x+10,y+10);
@@ -181,7 +181,7 @@ function drawX(ctx, x, y) {
 
 function drawO(ctx, x, y) {
     var oldstyle = ctx.strokeStyle;
-    ctx.strokeStyle = 'blue';
+    ctx.strokeStyle = '#19B5FE';
     ctx.lineWidth=20;
     ctx.beginPath();
     ctx.arc(x+tileSize/2,y+tileSize/2,60,0,2*Math.PI);
