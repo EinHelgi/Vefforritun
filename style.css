@@ -56,6 +56,12 @@ nav ul li:hover a{
 	color: orange;
 }
 
+.chosen {
+	background-color: rgb(44, 62, 80);
+}
+.chosen a {
+	color: orange;
+}
 
 nav ul li.selected { border-bottom: 2px solid #525252; }
 

@@ -3,6 +3,7 @@ var g_pacmanload = false;
 var g_breakoutload = false;
 
 var old_id;
+var old_cho = $('.mylla');
 
 $(document).ready(function()
 {
@@ -14,6 +15,8 @@ $(document).ready(function()
 	    startStopBreakout(id, old_id);
 
 	    updateHighscoreBoard(id);
+
+	    //markChosen();
 
 	    if(old_id !== id || old_id === undefined) 
 	    {
@@ -57,14 +60,23 @@ function updateHighscoreBoard(id) {
     	highScore = 0;
     	updateScore(scoreBoard);
     	updateHighscore();
+    	old_cho.removeClass('chosen');
+    	$('.mylla').addClass('chosen');
+    	old_cho = $('.mylla');
     }
     if(id==='#pacman') {
     	highScore = 1;
     	updateHighscore();
+    	old_cho.removeClass('chosen');
+    	$('.pacman').addClass('chosen');
+    	old_cho = $('.pacman');
     }
     if(id==='#breakout') {
     	highScore = 2;
     	updateHighscore();
+    	old_cho.removeClass('chosen');
+    	$('.breakout').addClass('chosen');
+    	old_cho = $('.breakout');
     }
 }
 

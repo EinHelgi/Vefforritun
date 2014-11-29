@@ -55,7 +55,7 @@ Level.prototype.update = function(du) {
 			this.flickercounter = 0.1*SECS_TO_NOMINALS;
 		}
 	}
-	if(highscore>0) updateScore(highscore);
+	if(!highscore===null) updateScore(highscore);
 	else updateScore(0);
 };
 
