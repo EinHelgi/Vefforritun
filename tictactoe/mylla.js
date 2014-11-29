@@ -77,7 +77,7 @@ function test(data) {
         }
         if(data[1]==="alien") {
             scoreBoard--;
-            $(".currentPlayer").text('The Alien won! - you loose a point');
+            $(".currentPlayer").text('The Alien won! - you lose a point');
             playing = false;
         }
         updateScore(scoreBoard);
