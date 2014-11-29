@@ -50,13 +50,11 @@ Level.prototype.update = function(du) {
 	if(g_levelchange) {
 		if(this.flickercounter > 0) this.flickercounter -= du;
 		else {
-			console.log("bacon");
 			this.flicker = !this.flicker;
 			this.flickercounter = 0.1*SECS_TO_NOMINALS;
 		}
 	}
-	if(highscore!=='null' && highscore!==null) updateScore(highscore);
-	else updateScore(0);
+	updateScore(g_score);
 };
 
 g_point = function(num) {

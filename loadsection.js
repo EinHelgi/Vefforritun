@@ -15,6 +15,7 @@ $(document).ready(function()
 	    startStopBreakout(id, old_id);
 
 	    updateHighscoreBoard(id);
+	    $(".totScore").text('0');
 
 	    if(old_id !== id || old_id === undefined) 
 	    {
@@ -27,6 +28,7 @@ $(document).ready(function()
 		        old_id = id;
 		    });
 		 }
+		 updateScore();
 		 e.preventDefault();
 	});
 	$('form').submit(function(e)
@@ -58,7 +60,6 @@ $(document).ready(function()
 function updateHighscoreBoard(id) {
 	if(id==='#tic-tac-toe') {
     	highScore = 0;
-    	updateScore(scoreBoard);
     	updateHighscore();
 
     	old_cho.removeClass('chosen');
@@ -98,6 +99,7 @@ function startStopPacman(id, oldid){
 
 	if(oldid !== undefined && oldid === "#pacman" && id !== "#pacman") {
 	    stopPacman();
+	    updateScore(0);
     } 
     else if(id === "#pacman" && oldid !== "#pacman" && g_pacmanload) {
     	restartPacman();
@@ -111,7 +113,6 @@ function stopPacman() {
 function restartPacman() {
 	main.revive();
 	g_pausemenu.ON = true;
-	updateScore(highscore);
 }
 
 function loadPacman() {
@@ -157,7 +158,6 @@ function stopBreakout() {
 function restartBreakout() {
 	g_main.revive();
 	gb_isUpdatePaused = true;
-	updateScore(g_levelb.score);
 }
 
 function loadBreakout() {
