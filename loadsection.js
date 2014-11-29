@@ -45,7 +45,6 @@ $(document).ready(function()
 			var score = $('.totScore').text();
 			insertToHighscore([name, score]);
 		}
-		console.log('form');
 		updateHighscore();
 
 		e.preventDefault();
@@ -54,18 +53,17 @@ $(document).ready(function()
 
 
 function updateHighscoreBoard(id) {
-	if(id === '#tic-tac-toe') {
-	    	highScore = 0;
-	    	updateScore(scoreBoard);
-	    	updateHighscore();
+	if(id==='#tic-tac-toe') {
+    	highScore = 0;
+    	updateScore(scoreBoard);
+    	updateHighscore();
     }
-    if(id === '#pacman') {
+    if(id==='#pacman') {
     	highScore = 1;
     	updateHighscore();
     }
-    if(id === '#breakout') {
+    if(id==='#breakout') {
     	highScore = 2;
-    	updateScore(g_levelb.score);
     	updateHighscore();
     }
 }
@@ -98,6 +96,7 @@ function stopPacman() {
 function restartPacman() {
 	main.revive();
 	g_pausemenu.ON = true;
+	updateScore(highscore);
 }
 
 function loadPacman() {
@@ -143,6 +142,7 @@ function stopBreakout() {
 function restartBreakout() {
 	g_main.revive();
 	gb_isUpdatePaused = true;
+	updateScore(g_levelb.score);
 }
 
 function loadBreakout() {
