@@ -6,7 +6,7 @@ var g_levelb = {
 }
 
 g_levelb.Makewall = function (why) {
-	//if (g_sound) document.getElementById('start').play();
+	if (g_sound) document.getElementById('start').play();
 	this.bricks = 0;
 	if(why)this.score = 0;
 	var strength = 1;

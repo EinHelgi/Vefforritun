@@ -114,8 +114,12 @@ section {
 	box-sizing: border-box;
 	float: left;
 	width: 50%;
-	text-align: center; 
+	text-align: left; 
 	padding-bottom: 1em;
+}
+
+.scoreboard label {
+	font-size: 1.5em;
 }
 
 #highscore ul li {
@@ -123,7 +127,7 @@ section {
 }
 
 #highscore form {
-	margin: auto;
+	float: left;
 }
 
 #tic-tac-toe {

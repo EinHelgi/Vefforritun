@@ -16,8 +16,6 @@ $(document).ready(function()
 
 	    updateHighscoreBoard(id);
 
-	    //markChosen();
-
 	    if(old_id !== id || old_id === undefined) 
 	    {
 		    $("section:visible").fadeOut(function() 
@@ -60,6 +58,7 @@ function updateHighscoreBoard(id) {
     	highScore = 0;
     	updateScore(scoreBoard);
     	updateHighscore();
+
     	old_cho.removeClass('chosen');
     	$('.mylla').addClass('chosen');
     	old_cho = $('.mylla');
@@ -67,6 +66,7 @@ function updateHighscoreBoard(id) {
     if(id==='#pacman') {
     	highScore = 1;
     	updateHighscore();
+
     	old_cho.removeClass('chosen');
     	$('.pacman').addClass('chosen');
     	old_cho = $('.pacman');
@@ -74,6 +74,7 @@ function updateHighscoreBoard(id) {
     if(id==='#breakout') {
     	highScore = 2;
     	updateHighscore();
+
     	old_cho.removeClass('chosen');
     	$('.breakout').addClass('chosen');
     	old_cho = $('.breakout');
