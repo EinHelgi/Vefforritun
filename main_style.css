@@ -3,6 +3,11 @@ main {
 	min-height: 54em;
 }
 
+section {
+	display: none;
+	font-size: 1.2em;
+}
+
 #wrapper {
 	margin: auto;
 	max-width: 900px;
@@ -36,9 +41,8 @@ main {
 	text-decoration: none;
 }
 
-section {
-	display: none;
-	font-size: 1.2em;
+.currentPLayer {
+	margin-top: 0.5em;
 }
 
 #highscore {
