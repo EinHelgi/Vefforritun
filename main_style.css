@@ -1,6 +1,7 @@
 main {
 	background: rgb(52, 73, 94);
 	min-height: 54em;
+	height: 100%
 }
 
 section {
