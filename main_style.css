@@ -35,7 +35,7 @@ main {
 
 section {
 	display: none;
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 #highscore {
@@ -44,6 +44,7 @@ section {
 	width: 450px;
 	padding-top: 5em;
 	padding-left: 3em;
+	font-size: 1.2em;
 }
 
 #highscore h3 {
@@ -63,14 +64,6 @@ section {
 .scoreboard label {
 	font-size: 1.5em;
 }
-
-/*form {
-	text-align: left;
-}
-
-.submitButton {
-	text-align: center;
-}*/
 
 .result {
 	display: none;
