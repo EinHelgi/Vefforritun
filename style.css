@@ -121,13 +121,18 @@ section {
 	font-size: 1.5em;
 }
 
-/*form {
-	text-align: left;
+form p {
+	padding: 0.5em;
+}
+
+form input {
+	background-color: lightgray;
+	margin-bottom: 0.5em;
 }
 
 .submitButton {
-	text-align: center;
-}*/
+	padding: 0.2em;
+}
 
 .result {
 	display: none;
@@ -152,6 +157,11 @@ section {
 	display: block;
 	padding-top: 3em;
 	padding-right: 2em;
+}
+
+#playButton {
+	background-color: lightgray;
+	padding: 0.4em;
 }
 
 #breakout {
