@@ -47,15 +47,12 @@ function insertToHighscore(data){
 function updateScore() {
     switch (highScore) {
         case 0:
-            console.log('hello');
             $(".totScore").text(scoreBoard);
             break;
         case 1:
-            console.log('game3');
             $(".totScore").text(g_score);
             break;
         case 2:
-            console.log('fun');
             $(".totScore").text(g_levelb.score);
             break;
     }
