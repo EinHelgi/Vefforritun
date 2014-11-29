@@ -1,0 +1,108 @@
+main {
+	background: rgb(44, 62, 80);
+	min-height: 54em;
+}
+
+#wrapper {
+	margin: auto;
+	max-width: 900px;
+	min-width: 450px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#game {
+	box-sizing: border-box;
+	float: left;
+	width: 450px;
+}
+
+#playbutton {
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #188ddb;
+  padding: 8px 18px 8px 18px;
+  text-decoration: none;
+}
+
+#playbutton:hover {
+  background: #f04e03;
+  text-decoration: none;
+}
+
+section {
+	display: none;
+	font-size: 1.5em;
+}
+
+#highscore {
+	box-sizing: border-box;
+	float: left;
+	width: 450px;
+	padding-top: 5em;
+	padding-left: 3em;
+}
+
+#highscore h3 {
+	text-align: left;
+	margin-left: 3em;
+	padding: 1em;
+}
+
+.scoreboard {
+	box-sizing: border-box;
+	float: left;
+	width: 50%;
+	text-align: left; 
+	padding-bottom: 1em;
+}
+
+.scoreboard label {
+	font-size: 1.5em;
+}
+
+/*form {
+	text-align: left;
+}
+
+.submitButton {
+	text-align: center;
+}*/
+
+.result {
+	display: none;
+	text-align: center;
+	color: red;
+}
+
+.invalid {
+	border: 1px solid #BF6566; 
+	background: #FCEDED;
+}
+
+#highscore ul li {
+	list-style: none;
+}
+
+#highscore form {
+	float: left;
+}
+
+#tic-tac-toe {
+	display: block;
+	padding-top: 3em;
+	padding-right: 2em;
+}
+
+#breakout {
+	padding-top: 3em;
+	padding-right: 2em;
+}
+
+#pacman {
+	padding-top: 3em;
+	padding-right: 2em;
+}
