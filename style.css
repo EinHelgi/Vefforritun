@@ -58,6 +58,7 @@ nav ul li:hover a{
 
 .chosen {
 	background-color: rgb(44, 62, 80);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
 }
 .chosen a {
 	color: orange;
