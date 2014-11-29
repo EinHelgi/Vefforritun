@@ -10,7 +10,6 @@ function updateHighscore() {
     }
     else {
         addToHtml(data);
-        console.log('cache');
     }
 }
 

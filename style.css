@@ -106,7 +106,8 @@ section {
 }
 
 #highscore h3 {
-	text-align: center;
+	text-align: left;
+	margin-left: 3em;
 	padding: 1em;
 }
 
@@ -160,8 +161,8 @@ section {
 footer {
 	background-color: rgb(4, 22, 40);
 	height: 8em;
+	color: rgb(248, 148, 6);
 	box-shadow: 0px -2px 1px 0px rgba(0,0,0,0.9);
-	color: rgb(200, 110, 6);
 }
 
 footer h2 {
@@ -181,6 +182,7 @@ footer div {
 	#game {
 		float: none;
 		margin: auto;
+		padding-top: 11em;
 	}
 	#highscore {
 		float: none;
@@ -194,6 +196,7 @@ footer div {
 	#game {
 		float: none;
 		margin: auto;
+		padding-top: 11em;
 	}
 	#highscore {
 		float: none;
