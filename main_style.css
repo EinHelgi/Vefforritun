@@ -76,16 +76,12 @@ section {
 
 .scoreboard_name {
 	display: inline-block;
-	/* box-sizing: border-box; */
-	/* float: left; */
 	width: 49%;
 	text-align: left;
 	}
 
 .scoreboard_score {
 	display: inline-block;
-	/* box-sizing: border-box; */
-	/* float: left; */
 	width: 49%;
 	text-align: right;
 }
@@ -132,10 +128,6 @@ section {
 
 #highscore ul li {
 	list-style: none;
-}
-
-form {
-	/*float: left;*/
 }
 
 form label {
