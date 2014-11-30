@@ -19,6 +19,7 @@ section {
 	box-sizing: border-box;
 	float: left;
 	width: 450px;
+	margin-top: 58px;
 }
 
 #playButton {
@@ -136,17 +137,6 @@ form label {
 
 #tic-tac-toe {
 	display: block;
-	padding-top: 3em;
-}
-
-#breakout {
-	padding-top: 3em;
-	padding-right: 2em;
-}
-
-#pacman {
-	padding-top: 3em;
-	padding-right: 2em;
 }
 
 .submitButton {
