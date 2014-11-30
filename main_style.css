@@ -13,7 +13,6 @@ section {
 	margin: auto;
 	max-width: 900px;
 	min-width: 450px;
-	text-align: center;
 }
 
 #game {
@@ -46,40 +45,75 @@ section {
 	box-sizing: border-box;
 	float: left;
 	width: 450px;
-	padding-top: 2em;
-	padding-left: 3em;
+	padding: 2em 1.5em;
 	font-size: 1.2em;
 }
 
 #highscore h3 {
+	background: #D91E18;
+	font-weight: lighter;
 	text-align: center;
-	padding: 1em;
+	font-size: 2em;
+	letter-spacing: 10px;
+	margin-top: 20px;
+	margin-bottom: 24px;
 }
 
 .highplayer li {
-	margin: 2px 0px;
+	margin: 3px 0px;
 }
 
-.scoreboard {
-	box-sizing: border-box;
-	float: left;
-	width: 50%;
-	text-align: left; 
+.scoreboard_name {
+	display: inline-block;
+	/* box-sizing: border-box; */
+	/* float: left; */
+	width: 49%;
+	text-align: left;
+	padding-bottom: 1em;
+	}
+
+.scoreboard_score {
+	display: inline-block;
+	/* box-sizing: border-box; */
+	/* float: left; */
+	width: 49%;
+	text-align: right;
 	padding-bottom: 1em;
 }
 
-.highScore li {
-	margin: 2px 0px;
+.current_highscore {
+	text-align: left;
 }
 
-.scoreboard label {
+.pName {
+	margin-top: 25px;
+	margin-bottom: 4px;
+	width: 100%;
+	height: 28px;
+	background: #22313F;
+	border-radius: 2px;
+	border: none;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1em;
+	color: white;
+}
+
+.highScore li {
+	margin: 3px 0px;
+}
+
+.scoreboard_name label {
+	font-size: 1.5em;
+}
+
+.scoreboard_score label {
 	font-size: 1.5em;
 }
 
 .result {
 	display: none;
 	text-align: center;
-	color: '#F22613';
+	color: #F22613;
 }
 
 .invalid {
@@ -121,7 +155,7 @@ form label {
 	color: #000000;
 	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
-	background: #207bab;
+	background: #D91E18;
 	padding-top: 1px;
 	padding-bottom: 2px;
 	margin-bottom: 10px;
