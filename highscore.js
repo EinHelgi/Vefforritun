@@ -50,7 +50,8 @@ function updateScore() {
             $(".totScore").text(scoreBoard);
             break;
         case 1:
-            $(".totScore").text(g_score);
+            if(highscore===null) $(".totScore").text(0);
+            else $(".totScore").text(highscore);
             break;
         case 2:
             $(".totScore").text(g_levelb.score);
