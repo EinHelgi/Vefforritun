@@ -17,9 +17,11 @@ function addToHtml(data) {
     localStorage.setItem(cach[highScore], JSON.stringify(data));
     $('.highplayer').empty();
     $('.highScore').empty();
-    for (var i=0;i<data.length;++i) {
-        $('.highplayer').append("<li>"+data[i]+"</li>");
-        i++
+    var k = 1;
+    for (var i=0;i<data.length;i++) {
+        $('.highplayer').append("<li>"+k+". "+data[i]+"</li>");
+        i++;
+        k++;
         $('.highScore').append("<li>"+data[i]+"</li>");
     }
 }
@@ -54,7 +56,7 @@ function updateScore() {
             else $(".totScore").text(highscore);
             break;
         case 2:
-            $(".totScore").text(g_levelb.score);
+            $(".totScore").text(g_levelb.highscore);
             break;
     }
 }

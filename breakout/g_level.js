@@ -2,7 +2,8 @@ var g_levelb = {
 	level : 1,
 	bricks : 0,
 	score : 0,
-	win : false
+	win : false,
+	highscore : 0
 }
 
 var g_hitaudio =new Audio('breakout/hit1.wav');
@@ -50,7 +51,8 @@ g_levelb.update = function (du) {
     	g_ball.reset(false);
     	if (this.level===1) this.win = true;
     }
-    updateScore(g_levelb.score);
+    if(g_levelb.score>g_levelb.highscore) g_levelb.highscore = g_levelb.score;
+    updateScore();
 }
 
 g_levelb.render = function (ctx) {
