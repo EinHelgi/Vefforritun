@@ -123,8 +123,7 @@ section {
 }
 
 .invalid {
-	border: 1px solid #BF6566; 
-	background: #FCEDED;
+	background: #E9798A;
 }
 
 #highscore ul li {
