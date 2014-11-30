@@ -13,7 +13,6 @@ section {
 	margin: auto;
 	max-width: 900px;
 	min-width: 450px;
-	font-weight: bold;
 	text-align: center;
 }
 
@@ -33,6 +32,7 @@ section {
 	background: #207bab;
 	padding-top: 1px;
 	padding-bottom: 2px;
+	margin-bottom: 10px;
 	width: 100%;
 	text-decoration: none;
 }
@@ -42,23 +42,22 @@ section {
 	text-decoration: none;
 }
 
-.currentPLayer {
-	margin-top: 0.5em;
-}
-
 #highscore {
 	box-sizing: border-box;
 	float: left;
 	width: 450px;
-	padding-top: 5em;
+	padding-top: 2em;
 	padding-left: 3em;
 	font-size: 1.2em;
 }
 
 #highscore h3 {
-	text-align: left;
-	margin-left: 3em;
+	text-align: center;
 	padding: 1em;
+}
+
+.highplayer li {
+	margin: 2px 0px;
 }
 
 .scoreboard {
@@ -69,6 +68,10 @@ section {
 	padding-bottom: 1em;
 }
 
+.highScore li {
+	margin: 2px 0px;
+}
+
 .scoreboard label {
 	font-size: 1.5em;
 }
@@ -76,7 +79,7 @@ section {
 .result {
 	display: none;
 	text-align: center;
-	color: red;
+	color: '#F22613';
 }
 
 .invalid {
@@ -88,8 +91,12 @@ section {
 	list-style: none;
 }
 
-#highscore form {
-	float: left;
+form {
+	/*float: left;*/
+}
+
+form label {
+	margin: 5px 0px;
 }
 
 #tic-tac-toe {
@@ -105,4 +112,24 @@ section {
 #pacman {
 	padding-top: 3em;
 	padding-right: 2em;
+}
+
+.submitButton {
+	border-radius: 1px;
+	border: none;
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.8);
+	color: #000000;
+	font-family: 'Raleway', sans-serif;
+	font-size: 24px;
+	background: #207bab;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+	width: 100%;
+	text-decoration: none;
+}
+
+.submitButton:hover {
+	background: #FF6B00;
+	text-decoration: none;
 }

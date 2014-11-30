@@ -60,12 +60,6 @@
 					</section>
 				</div>
 				<div id="highscore">
-					<div class="scoreboard">
-		                <label>Current score:</label>
-		            </div>
-		            <div class="scoreboard">
-		                <label class="totScore">0</label>
-		            </div>
 					<h3>HIGHSCORE</h3>
             		<div class="scoreboard">
                 		<label>Player</label>
@@ -75,14 +69,20 @@
                 		<label>Score</label>
                 		<ul class="highScore"></ul>
             		</div>
+            		<div class="scoreboard">
+		                <label>Current score:</label>
+		            </div>
+		            <div class="scoreboard">
+		                <label class="totScore">0</label>
+		            </div>
             		<form>
                 		<label>Player name: </label>
                 		<input type="text" class="pName" name="name" placeholder="put name here to submit">
                 		<br>
+                		<input class="submitButton" type="submit" value="SUBMIT SCORE">
                 		<div class="result">
-            				<p>Gamer must add a name in the field above</p>
+            				<p>You must add a name</p>
             			</div>
-                		<input class="submitButton" type="submit" value="Submit your score to highscore">
             		</form>
 				</div>
 			</div>
