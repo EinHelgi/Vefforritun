@@ -140,6 +140,9 @@ form label {
 }
 
 .submitButton {
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none; 
 	border-radius: 1px;
 	border: none;
 	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.8);
